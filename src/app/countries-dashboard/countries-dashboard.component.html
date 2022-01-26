@@ -1,9 +1,12 @@
-<div>
-  <h2>Country Dashboard</h2>
-  <div>Search bar</div>
 
+<div class="dashboard-container">
+  <div class="header-container">
+    <h2>Country Dashboard</h2>
+    <app-search-bar></app-search-bar>
+  </div>
   <mat-grid-list cols="4" rowHeight="1:1">
     <mat-grid-tile *ngFor="let countryDetails of countryList">
-      <app-country-card [details]="countryDetails"></app-country-card></mat-grid-tile>
+      <app-country-card [details]="countryDetails"></app-country-card
+    ></mat-grid-tile>
   </mat-grid-list>
 </div>
