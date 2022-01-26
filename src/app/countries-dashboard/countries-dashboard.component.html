@@ -1,1 +1,9 @@
-<p>overview works!</p>
+<div>
+  <h2>Country Dashboard</h2>
+  <div>Search bar</div>
+
+  <mat-grid-list cols="4" rowHeight="1:1">
+    <mat-grid-tile *ngFor="let countryDetails of countryList">
+      <app-country-card [details]="countryDetails"></app-country-card></mat-grid-tile>
+  </mat-grid-list>
+</div>

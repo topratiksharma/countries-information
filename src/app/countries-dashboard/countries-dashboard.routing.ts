@@ -8,4 +8,4 @@ const routes: Routes = [{ path: '', component: CountriesDashboardComponent }];
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class OverviewRouting {}
+export class CountryRouting {}

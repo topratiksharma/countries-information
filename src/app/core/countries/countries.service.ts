@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import {
-  HttpWrapperService,
-} from '../http-wrapper/http-wrapper.service';
+import { Observable } from 'rxjs';
+import { HttpWrapperService } from '../http-wrapper/http-wrapper.service';
 
 @Injectable({
   providedIn: 'root',
@@ -9,7 +8,7 @@ import {
 export class CountriesService {
   constructor(private httpWrapper: HttpWrapperService) {}
 
-  public getAllCountries() {
-    return this.httpWrapper.get('all/');
+  public getAllCountries(): Observable<Array<any>> {
+    return this.httpWrapper.get('all/') as Observable<Array<any>>;
   }
 }

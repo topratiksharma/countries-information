@@ -7,11 +7,13 @@ import { CountriesService } from '../core/countries/countries.service';
   styleUrls: ['./countries-dashboard.component.scss'],
 })
 export class CountriesDashboardComponent implements OnInit {
+  public countryList: Array<any> = [];
   constructor(private countriesService: CountriesService) {}
 
   ngOnInit(): void {
-    this.countriesService.getAllCountries().subscribe((counties) => {
-      console.log(counties);
-    });
+    this.countriesService.getAllCountries().subscribe((countries: any[]) => {
+        this.countryList = countries;
+        console.log(countries);
+      });
   }
 }
