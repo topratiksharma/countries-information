@@ -1,4 +1,4 @@
 <div class="wrapper">
-  <app-navbar></app-navbar>
-  <app-country-list></app-country-list>
+  <app-navbar (search)="searchCountries($event)" [searchText]="searchText"></app-navbar>
+  <app-country-list [searchText]="searchText"></app-country-list>
 </div>

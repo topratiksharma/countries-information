@@ -1,4 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { CountriesService } from 'src/app/core/countries/countries.service';
+import { CountryDetailsComponent } from '../country-details/country-details.component';
 
 @Component({
   selector: 'app-country-card',
@@ -7,7 +10,15 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CountryCardComponent implements OnInit {
   @Input() public details: any;
-  constructor() {}
+  constructor(
+    private _modalService: NgbModal,
+    private countryService: CountriesService
+  ) {}
 
   ngOnInit(): void {}
+
+  viewDetails(details: any) {
+    this.countryService.setData(details);
+    this._modalService.open(CountryDetailsComponent);
+  }
 }

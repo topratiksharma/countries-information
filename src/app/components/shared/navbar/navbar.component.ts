@@ -1,6 +1,11 @@
-import { Component, OnInit, ElementRef, OnDestroy } from '@angular/core';
-import { Location } from '@angular/common';
-import { Router } from '@angular/router';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  Output,
+  EventEmitter,
+  Input,
+} from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -9,60 +14,39 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit, OnDestroy {
-  location: Location;
-  mobile_menu_visible: any = 0;
-  private toggleButton: any;
-  private sidebarVisible: boolean;
+  @Output() search: EventEmitter<string> = new EventEmitter<string>();
 
-  public isCollapsed = true;
+  public isCollapsed: boolean = true;
+  @Input() public searchText: string = '';
+  public closeResult: string = '';
 
-  closeResult: string = '';
+  constructor(private modalService: NgbModal) {}
 
-  constructor(
-    location: Location,
-    private element: ElementRef,
-    private router: Router,
-    private modalService: NgbModal
-  ) {
-    this.location = location;
-    this.sidebarVisible = false;
-  }
-  // function that adds color white/transparent to the navbar on resize (this is for the collapse)
-  updateColor = () => {
-    var navbar = document.getElementsByClassName('navbar')[0];
-    if (window.innerWidth < 993 && !this.isCollapsed) {
-      navbar.classList.add('bg-white');
-      navbar.classList.remove('navbar-transparent');
-    } else {
-      navbar.classList.remove('bg-white');
-      navbar.classList.add('navbar-transparent');
-    }
-  };
   ngOnInit() {}
 
   open(content: any) {
+    this.searchText = this.closeResult;
     this.modalService
       .open(content, { windowClass: 'modal-search' })
       .result.then(
         (result) => {
-          this.closeResult = `Closed with: ${result}`;
+          this.searchText = '';
+          this.closeResult = '';
+          this.search.emit(this.searchText);
         },
         (reason) => {
-          this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+          if (reason == 'close') {
+            this.searchText = '';
+          }
+          this.closeResult = this.searchText;
+          this.search.emit(this.searchText);
         }
       );
   }
 
-  private getDismissReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
-    } else {
-      return `with: ${reason}`;
-    }
+  public onSeachTextChange() {
+    this.search.emit(this.searchText);
   }
-  ngOnDestroy() {
-    window.removeEventListener('resize', this.updateColor);
-  }
+
+  ngOnDestroy() {}
 }

@@ -1,0 +1,31 @@
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-title">{{ country.name }}</h4>
+  <button
+    type="button"
+    class="close"
+    aria-label="Close button"
+    aria-describedby="modal-title"
+    (click)="modal.dismiss('Cross click')"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <p>
+    <strong>Capital : {{ country.capital }}</strong>
+  </p>
+  <p>
+    <strong>Official Name : {{ country.officailName }}</strong>
+  </p>
+  <p>
+    <strong
+      >Currency : {{ country.currency.name }}
+      <span class="badge badge-warning">{{
+        country.currency.symbol
+      }}</span></strong
+    >
+  </p>
+  <p>
+    <strong>Languages : {{ country.languages }}</strong>
+  </p>
+</div>

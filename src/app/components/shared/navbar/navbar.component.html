@@ -18,7 +18,6 @@
           </button>
         </li>
         <li class="separator d-lg-none"></li>
-
       </ul>
     </div>
   </div>
@@ -31,6 +30,8 @@
       id="inlineFormInputGroup"
       placeholder="SEARCH"
       type="text"
+      [(ngModel)]="searchText"
+      (keyup)="onSeachTextChange()"
     />
 
     <button
@@ -38,7 +39,7 @@
       class="close"
       data-dismiss="modal"
       type="button"
-      (click)="modal.dismiss('Cross click')"
+      (click)="modal.dismiss('close')"
     >
       <i class="tim-icons icon-simple-remove"> </i>
     </button>

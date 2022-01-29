@@ -1,4 +1,8 @@
 <div class="font-icon-detail">
-  <img [src]="details?.flags.png" alt="no flag found" />
+  <img
+    [src]="details?.flags.png"
+    alt="no flag found"
+    (click)="viewDetails(details)"
+  />
   <p>{{ details.name.common }}</p>
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CountriesService } from 'src/app/core/countries/countries.service';
 
 @Component({
@@ -7,6 +7,7 @@ import { CountriesService } from 'src/app/core/countries/countries.service';
 })
 export class CountryListComponent implements OnInit {
   public countryList: any[] = [];
+  @Input() public searchText = '';
   constructor(private countriesService: CountriesService) {}
 
   ngOnInit(): void {

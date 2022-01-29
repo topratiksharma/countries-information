@@ -7,29 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
   public sidebarColor: string = 'red';
+  searchText: string = '';
 
   constructor() {}
 
-  changeSidebarColor(color: string) {
-    var sidebar = document.getElementsByClassName('sidebar')[0];
-    var mainPanel = document.getElementsByClassName('main-panel')[0];
-
-    this.sidebarColor = color;
-
-    if (sidebar != undefined) {
-      sidebar.setAttribute('data', color);
-    }
-    if (mainPanel != undefined) {
-      mainPanel.setAttribute('data', color);
-    }
+  searchCountries(data: string) {
+    this.searchText = data;
   }
-  changeDashboardColor(color: string) {
-    var body = document.getElementsByTagName('body')[0];
-    if (body && color === 'white-content') {
-      body.classList.add(color);
-    } else if (body.classList.contains('white-content')) {
-      body.classList.remove('white-content');
-    }
-  }
+
   ngOnInit() {}
 }
