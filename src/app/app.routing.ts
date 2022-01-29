@@ -6,7 +6,7 @@ export const routes: Routes = [
   {
     path: 'countries',
     loadChildren: () =>
-      import('./components/countries-dashboard/countries-dashboard.module').then((m) => m.CountriesDashboardModule),
+      import('./components/dashboard/dashboard.module').then((m) => m.DashboardModule),
   },
 ];
 

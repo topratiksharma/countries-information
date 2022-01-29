@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SearchBarComponent } from './search-bar/search-bar.component';
+import { NavbarComponent } from './navbar/navbar.component';
 import { MaterialModule } from 'src/app/core/material.module';
 @NgModule({
-  declarations: [SearchBarComponent],
+  declarations: [NavbarComponent],
   imports: [CommonModule, MaterialModule],
-  exports: [SearchBarComponent],
+  exports: [NavbarComponent],
 })
 export class SharedModule {}

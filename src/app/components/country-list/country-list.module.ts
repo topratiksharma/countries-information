@@ -11,4 +11,4 @@ import { CountryCardComponent } from "../country-card/country-card.component";
   declarations: [CountryListComponent, CountryCardComponent],
   exports: [CountryListComponent],
 })
-export class CountriesDashboardModule {}
+export class CountryListModule {}
