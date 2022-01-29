@@ -11,8 +11,8 @@ export class DashboardComponent implements OnInit {
 
   constructor() {}
 
-  searchCountries(data: string) {
-    this.searchText = data;
+  searchCountries(searchText: string) {
+    this.searchText = searchText;
   }
 
   ngOnInit() {}
