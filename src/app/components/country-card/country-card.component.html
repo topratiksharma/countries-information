@@ -1,14 +1,4 @@
-<div class="card">
-  <div class="flag-info">
-    <img [src]="details?.flags.png" alt="" class="flag" />
-  </div>
-  <div class="details">
-    <h3>{{ details?.name?.common }}</h3>
-  </div>
-  <div class="capital">
-    <p>Capital : {{ details?.capital || "Not available" }}</p>
-    <a [href]="details?.maps.googleMaps" target="_blank"
-      ><i class="material-icons">location_on</i></a
-    >
-  </div>
+<div class="font-icon-detail">
+  <img [src]="details?.flags.png" alt="no flag found" />
+  <p>{{ details.name.common }}</p>
 </div>

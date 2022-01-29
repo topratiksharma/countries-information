@@ -1,38 +1,18 @@
-.card {
+img {
+  max-width: 100%;
   transition: transform 0.2s;
+  border-radius: 0.2857rem;
+  width: 140px;
+  height: 90px;
   cursor: pointer;
+  box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.42),
+    0 4px 25px 0 rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+
   &:hover {
     transform: scale(1.1);
   }
 }
-
-.flag-info {
-  max-width: 100%;
-  min-width: 100%;
-}
-.flag {
-  position: relative;
-  overflow: hidden;
-  border-radius: 6px;
-  z-index: 3;
-  height: 150px;
-  width: 250px;
-  box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.42),
-    0 4px 25px 0 rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
-}
-
-.details {
-  justify-content: center;
-  font-size: 16px;
-}
-
-.capital {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  color: #999;
-}
-
-.capital a {
-  color: #999;
-}
+// p {
+//   font-size: 15px;
+//   color: white;
+// }
