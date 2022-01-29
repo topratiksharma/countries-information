@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SearchBarComponent } from './search-bar/search-bar.component';
-import { MaterialModule } from '../core/material.module';
+import { MaterialModule } from 'src/app/core/material.module';
 @NgModule({
   declarations: [SearchBarComponent],
   imports: [CommonModule, MaterialModule],
