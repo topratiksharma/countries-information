@@ -8,13 +8,13 @@ import { CountriesService } from '../core/countries/countries.service';
 })
 export class CountriesDashboardComponent implements OnInit {
   public countryList: Array<any> = [];
-  isloading: boolean=true;
+  public isloading: boolean = true;
   constructor(private countriesService: CountriesService) {}
 
   ngOnInit(): void {
     this.countriesService.getAllCountries().subscribe((countries: any[]) => {
-        this.countryList = countries;
-        this.isloading = false;
-      });
+      this.countryList = countries;
+      this.isloading = false;
+    });
   }
 }
