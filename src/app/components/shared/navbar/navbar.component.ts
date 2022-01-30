@@ -11,7 +11,7 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss'],
+  styleUrls: ['./navbar.component.scss', './modal.scss'],
 })
 export class NavbarComponent implements OnInit, OnDestroy {
   @Output() search: EventEmitter<string> = new EventEmitter<string>();

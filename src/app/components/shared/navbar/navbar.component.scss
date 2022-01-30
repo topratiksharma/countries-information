@@ -6,4 +6,266 @@
   text-transform: uppercase;
   font-size: 1rem;
   background-color: #27293d !important;
+  padding: 10px 30px 10px 15px;
+  width: 100%;
+  transition: all 300ms ease 0s;
+  align-items: center;
+
+  &.navbar-transparent {
+    background: transparent !important;
+  }
+
+  &.navbar-absolute {
+    position: absolute;
+    z-index: 1050;
+  }
+}
+
+.navbar-expand-lg > .container,
+.navbar-expand-lg > .container-fluid {
+  flex-wrap: nowrap;
+}
+.navbar > .container,
+.navbar > .container-fluid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.container-fluid {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.navbar .navbar-wrapper {
+  display: flex;
+  align-items: center;
+}
+.navbar .navbar-brand {
+  position: fixed;
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
+  color: #ffffff;
+  margin-left: 17px;
+  margin-top: 3px;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+.navbar-brand {
+  display: inline-block;
+  padding-top: 0.4068125rem;
+  padding-bottom: 0.4068125rem;
+  margin-right: 0.9375rem;
+  font-size: 0.99925rem;
+  line-height: inherit;
+  white-space: nowrap;
+}
+
+a {
+  color: #ba54f5;
+  font-weight: 300;
+}
+
+a {
+  color: #e14eca;
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+
+.navbar-collapse {
+  flex-basis: 100%;
+  flex-grow: 1;
+  align-items: center;
+}
+
+.navbar-nav {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.search-bar.input-group {
+  border-radius: 25px;
+  z-index: 4;
+  margin-bottom: 0;
+  height: 43px;
+  padding-right: 5px;
+}
+.navbar-nav li {
+  padding: 0 10px;
+}
+
+.search-bar {
+  margin-left: 30px;
+}
+.input-group,
+.form-group {
+  margin-bottom: 10px;
+  position: relative;
+}
+@media (min-width: 992px) {
+  .navbar-expand-lg {
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+  }
+
+  .navbar-expand-lg > .container,
+  .navbar-expand-lg > .container-fluid {
+    flex-wrap: nowrap;
+  }
+
+  .navbar-expand-lg .navbar-collapse {
+    display: flex !important;
+    flex-basis: auto;
+  }
+  .navbar-expand-lg .navbar-collapse {
+    display: flex !important;
+    flex-basis: auto;
+  }
+  .navbar-collapse {
+    background: none !important;
+  }
+  .navbar-expand-lg .navbar-nav {
+    flex-direction: row;
+  }
+}
+
+// Modals
+// Design element Dialogs
+// --------------------------------------------------
+.modal-content {
+  border: 0;
+
+  // Modal header
+  // Top section of the modal w/ title and dismiss
+
+  .modal-header {
+    border-bottom: none;
+
+    & button {
+      position: absolute;
+      right: 27px;
+      top: 24px;
+      outline: 0;
+      padding: 1rem;
+      margin: -1rem -1rem -1rem auto;
+    }
+    .title {
+      color: #000000;
+      margin-top: 5px;
+      margin-bottom: 0;
+    }
+
+    .modal-title {
+      color: #000000;
+    }
+
+    i.tim-icons {
+      font-size: 16px;
+    }
+  }
+
+  // Modal body
+  // Where all modal content resides (sibling of .modal-header and .modal-footer)
+  .modal-body {
+    line-height: 1.9;
+
+    p {
+      color: #000000;
+    }
+  }
+  // Footer (for actions)
+  .modal-footer {
+    border-top: 0;
+    -webkit-justify-content: space-between; /* Safari 6.1+ */
+    justify-content: space-between;
+
+    button {
+      margin: 0;
+      padding-left: 16px;
+      padding-right: 16px;
+      width: auto;
+
+      &.pull-left {
+        padding-left: 5px;
+        padding-right: 5px;
+        position: relative;
+        left: -5px;
+      }
+    }
+  }
+  .modal-body + .modal-footer {
+    padding-top: 0;
+  }
+}
+.modal-backdrop {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.modal {
+  // &.modal-default {
+  //   @include modal-colors(#fff, #000000);
+  // }
+
+  // &.modal-primary {
+  //   @include modal-colors($primary, #fff);
+  // }
+
+  // &.modal-danger {
+  //   @include modal-colors($danger, #fff);
+  // }
+
+  // &.modal-warning {
+  //   @include modal-colors($warning, #fff);
+  // }
+
+  // &.modal-success {
+  //   @include modal-colors($success, #fff);
+  // }
+
+  // &.modal-info {
+  //   @include modal-colors($info, #fff);
+  // }
+
+  .modal-header .close {
+    color: red;
+    text-shadow: none;
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+  }
+
+  &.modal-black {
+    .modal-content {
+      background: linear-gradient(to bottom, #000000 0%, #000000 100%);
+      color: rgba(#fff, 0.8);
+      .modal-header {
+        .modal-title,
+        .title {
+          color: rgba(#fff, 0.9);
+        }
+      }
+      .modal-body {
+        p {
+          color: rgba(#fff, 0.8);
+        }
+      }
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+      color: #fff;
+    }
+  }
 }
