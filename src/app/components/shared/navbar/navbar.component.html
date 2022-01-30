@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-absolute navbar-transparent">
+<nav class="navbar navbar-expand-lg navbar-absolute">
   <div class="container-fluid">
     <div class="navbar-wrapper">
       <a class="navbar-brand" href="javascript:void(0)"> Countries </a>
@@ -6,42 +6,16 @@
     <div class="navbar-collapse" id="navigation">
       <ul class="navbar-nav ml-auto">
         <li class="search-bar input-group">
-          <button
-            class="btn btn-link"
-            data-target="#searchModal"
-            data-toggle="modal"
-            (click)="open(content)"
-            id="search-button"
-          >
-            <i class="tim-icons icon-zoom-split"> </i>
-            <span class="d-lg-none d-md-block"> Search </span>
-          </button>
+          <input
+            class="form-control"
+            id="inlineFormInputGroup"
+            placeholder="SEARCH"
+            type="text"
+            [(ngModel)]="searchText"
+            (keyup)="onSeachTextChange()"
+          />
         </li>
-        <li class="separator d-lg-none"></li>
       </ul>
     </div>
   </div>
 </nav>
-
-<ng-template #content let-modal>
-  <div class="modal-header">
-    <input
-      class="form-control"
-      id="inlineFormInputGroup"
-      placeholder="SEARCH"
-      type="text"
-      [(ngModel)]="searchText"
-      (keyup)="onSeachTextChange()"
-    />
-
-    <button
-      aria-label="Close"
-      class="close"
-      data-dismiss="modal"
-      type="button"
-      (click)="modal.dismiss('close')"
-    >
-      <i class="tim-icons icon-simple-remove"> </i>
-    </button>
-  </div>
-</ng-template>

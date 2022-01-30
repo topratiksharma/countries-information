@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "car-on-sale": {
+    "country-info": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -72,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "car-on-sale:build:production"
+              "browserTarget": "country-info:build:production"
             },
             "development": {
-              "browserTarget": "car-on-sale:build:development"
+              "browserTarget": "country-info:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "car-on-sale:build"
+            "browserTarget": "country-info:build"
           }
         },
         "test": {
@@ -105,5 +105,5 @@
       }
     }
   },
-  "defaultProject": "car-on-sale"
+  "defaultProject": "country-info"
 }

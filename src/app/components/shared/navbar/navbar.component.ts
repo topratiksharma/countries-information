@@ -6,7 +6,6 @@ import {
   EventEmitter,
   Input,
 } from '@angular/core';
-import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-navbar',
@@ -20,29 +19,9 @@ export class NavbarComponent implements OnInit, OnDestroy {
   @Input() public searchText: string = '';
   public closeResult: string = '';
 
-  constructor(private modalService: NgbModal) {}
+  constructor() {}
 
   ngOnInit() {}
-
-  open(content: any) {
-    this.searchText = this.closeResult;
-    this.modalService
-      .open(content, { windowClass: 'modal-search' })
-      .result.then(
-        (result) => {
-          this.searchText = '';
-          this.closeResult = '';
-          this.search.emit(this.searchText);
-        },
-        (reason) => {
-          if (reason == 'close') {
-            this.searchText = '';
-          }
-          this.closeResult = this.searchText;
-          this.search.emit(this.searchText);
-        }
-      );
-  }
 
   public onSeachTextChange() {
     this.search.emit(this.searchText);
