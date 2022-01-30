@@ -18,7 +18,7 @@ export class CountryCardComponent implements OnInit {
   public viewDetails(details: any) {
     const countryInfo = {
       name: details.name.common,
-      officailName: details.name.official,
+      officialName: details.name.official,
       capital: details.capital[0],
       flag: details.flags.png,
       currency: Object.values(details.currencies).map((c: any) => c)[0],
@@ -26,9 +26,6 @@ export class CountryCardComponent implements OnInit {
         .map((l) => l)
         .join(', '),
     };
-    this.materialDialog.open(CountryDetailsComponent, {
-      // width: '40%',
-      data: countryInfo,
-    });
+    this.materialDialog.open(CountryDetailsComponent, { data: countryInfo});
   }
 }

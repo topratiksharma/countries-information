@@ -41,3 +41,9 @@
     font-family: "Poppins";
   }
 }
+
+.official-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

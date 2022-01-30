@@ -16,7 +16,7 @@ export class CountriesService {
   public getData() {
     return {
       name: this.country.name.common,
-      officailName: this.country.name.official,
+      officialName: this.country.name.official,
       capital: this.country.capital[0],
       currency: Object.values(this.country.currencies).map((c: any) => c)[0],
       languages: Object.values(this.country.languages)
