@@ -13,10 +13,6 @@ export class CountriesService {
     return this.httpWrapper.get('all/') as Observable<Array<any>>;
   }
 
-  public setData(countryDetails: any) {
-    this.country = countryDetails;
-  }
-
   public getData() {
     return {
       name: this.country.name.common,

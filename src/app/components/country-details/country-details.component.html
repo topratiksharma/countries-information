@@ -1,31 +1,43 @@
-<div class="modal-header">
-  <h4 class="modal-title" id="modal-title">{{ country.name }}</h4>
-  <button
-    type="button"
-    class="close"
-    aria-label="Close button"
-    aria-describedby="modal-title"
-    (click)="modal.dismiss('Cross click')"
-  >
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
-<div class="modal-body">
-  <p>
-    <strong>Capital : {{ country.capital }}</strong>
-  </p>
-  <p>
-    <strong>Official Name : {{ country.officailName }}</strong>
-  </p>
-  <p>
-    <strong
-      >Currency : {{ country.currency.name }}
-      <span class="badge badge-warning">{{
-        country.currency.symbol
-      }}</span></strong
-    >
-  </p>
-  <p>
-    <strong>Languages : {{ country.languages }}</strong>
-  </p>
+<div class="dialog-card">
+  <h1 mat-dialog-title>{{ country.name }}<mat-divider></mat-divider></h1>
+  <div mat-dialog-content>
+    <img [src]="country.flag" [alt]="country.flag" class="image" />
+    <mat-list>
+      <mat-list-item>
+        <mat-icon mat-list-icon>account_balance</mat-icon>
+        <div mat-line>
+          <label>Capital: </label>
+          <label>{{ country.capital }}</label>
+        </div>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon mat-list-icon>gavel</mat-icon>
+        <div mat-line>
+          <label>Official: </label>
+          <label>{{ country.officailName }}</label>
+        </div>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon mat-list-icon>atm</mat-icon>
+        <div mat-line>
+          <label>Currency: </label>
+          <label
+            >{{ country.currency.name }} ({{ country.currency.symbol }})</label
+          >
+        </div>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon mat-list-icon>translate</mat-icon>
+        <div mat-line>
+          <label
+            >{{ country.languages.includes(",") ? "Languages" : "Language" }} :
+          </label>
+          <label>{{ country.languages }}</label>
+        </div>
+      </mat-list-item>
+    </mat-list>
+  </div>
+  <div mat-dialog-actions align="end">
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Close</button>
+  </div>
 </div>

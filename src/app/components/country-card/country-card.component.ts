@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { MatDialog } from '@angular/material/dialog';
 import { CountriesService } from 'src/app/core/countries/countries.service';
 import { CountryDetailsComponent } from '../country-details/country-details.component';
 
@@ -11,15 +11,24 @@ import { CountryDetailsComponent } from '../country-details/country-details.comp
 export class CountryCardComponent implements OnInit {
   @Input() public details: any;
 
-  constructor(
-    private _modalService: NgbModal,
-    private countryService: CountriesService
-  ) {}
+  constructor(public materialDialog: MatDialog) {}
 
   public ngOnInit(): void {}
 
   public viewDetails(details: any) {
-    this.countryService.setData(details);
-    this._modalService.open(CountryDetailsComponent);
+    const countryInfo = {
+      name: details.name.common,
+      officailName: details.name.official,
+      capital: details.capital[0],
+      flag: details.flags.png,
+      currency: Object.values(details.currencies).map((c: any) => c)[0],
+      languages: Object.values(details.languages)
+        .map((l) => l)
+        .join(', '),
+    };
+    this.materialDialog.open(CountryDetailsComponent, {
+      // width: '40%',
+      data: countryInfo,
+    });
   }
 }

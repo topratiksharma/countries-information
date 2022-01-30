@@ -1,4 +1,40 @@
 .card-header {
   display: flex;
   justify-content: space-between;
+  font-family: "Poppins";
+}
+
+.dialog-card {
+  max-width: 400px;
+  background-color: #27293d;
+  color: white;
+  font-family: "Poppins";
+}
+
+.image {
+  border-radius: 5px;
+  width: 100%;
+  height: 200px;
+  justify-content: center;
+}
+
+::ng-deep {
+  .mat-dialog-container {
+    background-color: #27293d;
+    font-family: "Poppins";
+  }
+  .mat-divider {
+    border-top-color: rgb(255 255 255 / 20%);
+  }
+  .mat-list-base .mat-list-item {
+    color: white;
+    font-family: "Poppins";
+  }
+  .mat-line {
+    display: flex !important;
+    justify-content: space-between;
+  }
+  .mat-list-item-content {
+    padding: 0 !important;
+  }
 }

@@ -1,19 +1,18 @@
-import { Component, OnInit } from "@angular/core";
-import { NgbActiveModal } from "@ng-bootstrap/ng-bootstrap";
-import { CountriesService } from "src/app/core/countries/countries.service";
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
-  selector: "app-country-details",
-  templateUrl: "./country-details.component.html",
-  styleUrls: ["./country-details.component.scss"],
+  selector: 'app-country-details',
+  templateUrl: './country-details.component.html',
+  styleUrls: ['./country-details.component.scss'],
 })
 export class CountryDetailsComponent implements OnInit {
   public country: any;
   constructor(
-    public modal: NgbActiveModal,
-    private countryService: CountriesService
+    public dialogRef: MatDialogRef<CountryDetailsComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any
   ) {
-    this.country = this.countryService.getData();
+    this.country = this.data;
   }
 
   ngOnInit(): void {}
