@@ -8,12 +8,10 @@ import { Country, CountryDetails } from '../shared/types';
   templateUrl: './country-card.component.html',
   styleUrls: ['./country-card.component.scss'],
 })
-export class CountryCardComponent implements OnInit {
+export class CountryCardComponent {
   @Input() public details!: Country;
 
   constructor(public materialDialog: MatDialog) {}
-
-  public ngOnInit(): void {}
 
   public viewDetails(details: Country) {
     const countryInfo: CountryDetails = {

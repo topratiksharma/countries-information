@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CountryDetails } from '../shared/types';
 
@@ -7,7 +7,7 @@ import { CountryDetails } from '../shared/types';
   templateUrl: './country-details.component.html',
   styleUrls: ['./country-details.component.scss'],
 })
-export class CountryDetailsComponent implements OnInit {
+export class CountryDetailsComponent {
   public country: CountryDetails;
   constructor(
     public dialogRef: MatDialogRef<CountryDetailsComponent>,
@@ -15,6 +15,4 @@ export class CountryDetailsComponent implements OnInit {
   ) {
     this.country = this.data;
   }
-
-  ngOnInit(): void {}
 }

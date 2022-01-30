@@ -12,7 +12,7 @@ import {
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
 })
-export class NavbarComponent implements OnInit, OnDestroy {
+export class NavbarComponent {
   @Output() search: EventEmitter<string> = new EventEmitter<string>();
 
   public isCollapsed: boolean = true;
@@ -21,11 +21,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   constructor() {}
 
-  ngOnInit() {}
-
   public onSeachTextChange() {
     this.search.emit(this.searchText);
   }
-
-  ngOnDestroy() {}
 }

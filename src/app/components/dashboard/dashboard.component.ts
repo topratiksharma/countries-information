@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'dashboard',
+  selector: 'ci-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent {
   public sidebarColor: string = 'red';
   searchText: string = '';
 
@@ -14,6 +14,4 @@ export class DashboardComponent implements OnInit {
   searchCountries(searchText: string) {
     this.searchText = searchText;
   }
-
-  ngOnInit() {}
 }
