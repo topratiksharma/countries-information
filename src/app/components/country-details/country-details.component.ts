@@ -3,7 +3,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CountryDetails } from '../shared/types';
 
 @Component({
-  selector: 'app-country-details',
+  selector: 'ci-country-details',
   templateUrl: './country-details.component.html',
   styleUrls: ['./country-details.component.scss'],
 })

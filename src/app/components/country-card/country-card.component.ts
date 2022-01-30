@@ -4,7 +4,7 @@ import { CountryDetailsComponent } from '../country-details/country-details.comp
 import { Country, CountryDetails } from '../shared/types';
 
 @Component({
-  selector: 'app-country-card',
+  selector: 'ci-country-card',
   templateUrl: './country-card.component.html',
   styleUrls: ['./country-card.component.scss'],
 })

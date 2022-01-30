@@ -3,7 +3,7 @@ import { CountriesService } from 'src/app/core/countries/countries.service';
 import { Country } from '../shared/types';
 
 @Component({
-  selector: 'app-country-list',
+  selector: 'ci-country-list',
   templateUrl: './country-list.html',
   styleUrls: ['./country-list.scss'],
 })
