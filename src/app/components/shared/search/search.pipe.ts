@@ -1,11 +1,10 @@
-import { Pipe, PipeTransform } from "@angular/core";
+import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: "search",
+  name: 'search',
 })
 export class SearchPipe implements PipeTransform {
   transform(values: Array<any>, searchText: string): Array<any> {
-    console.log(searchText);
     if (searchText) {
       values = values?.filter((c) =>
         c.name.common.toUpperCase().includes(searchText.toUpperCase())
