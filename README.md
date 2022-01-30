@@ -8,7 +8,7 @@ This application is built on angular library using angular cli.
 Go to `localhost:4200/`
 
 ### Or you can skip all of the above and click on the below [netlify](https://app.netlify.com/) hosted link
-### Hosted Link: [countries-information](https://countries-information-angular.netlify.app/countries/)
+### Hosted Link: [countries-information](https://countries-information-ng.netlify.app/)
 
 ## Technical details
 - Library - Angular 
