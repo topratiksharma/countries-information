@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { CountriesService } from 'src/app/core/countries/countries.service';
 import { CountryDetailsComponent } from '../country-details/country-details.component';
+import { Country, CountryDetails } from '../shared/types';
 
 @Component({
   selector: 'app-country-card',
@@ -9,14 +9,14 @@ import { CountryDetailsComponent } from '../country-details/country-details.comp
   styleUrls: ['./country-card.component.scss'],
 })
 export class CountryCardComponent implements OnInit {
-  @Input() public details: any;
+  @Input() public details!: Country;
 
   constructor(public materialDialog: MatDialog) {}
 
   public ngOnInit(): void {}
 
-  public viewDetails(details: any) {
-    const countryInfo = {
+  public viewDetails(details: Country) {
+    const countryInfo: CountryDetails = {
       name: details.name.common,
       officialName: details.name.official,
       capital: details.capital[0],
@@ -26,6 +26,6 @@ export class CountryCardComponent implements OnInit {
         .map((l) => l)
         .join(', '),
     };
-    this.materialDialog.open(CountryDetailsComponent, { data: countryInfo});
+    this.materialDialog.open(CountryDetailsComponent, { data: countryInfo });
   }
 }

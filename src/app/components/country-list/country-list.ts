@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CountriesService } from 'src/app/core/countries/countries.service';
+import { Country } from '../shared/types';
 
 @Component({
   selector: 'app-country-list',
@@ -7,7 +8,7 @@ import { CountriesService } from 'src/app/core/countries/countries.service';
   styleUrls: ['./country-list.scss'],
 })
 export class CountryListComponent implements OnInit {
-  public countryList: any[] = [];
+  public countryList: Country[] = [];
   public isloading: boolean = true;
 
   @Input() public searchText = '';
@@ -17,7 +18,7 @@ export class CountryListComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.countriesService.getAllCountries().subscribe((countries: any[]) => {
+    this.countriesService.getAllCountries().subscribe((countries: Country[]) => {
       this.countryList = countries;
       this.isloading = false;
     });
