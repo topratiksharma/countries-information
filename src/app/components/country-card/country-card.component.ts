@@ -10,14 +10,15 @@ import { CountryDetailsComponent } from '../country-details/country-details.comp
 })
 export class CountryCardComponent implements OnInit {
   @Input() public details: any;
+
   constructor(
     private _modalService: NgbModal,
     private countryService: CountriesService
   ) {}
 
-  ngOnInit(): void {}
+  public ngOnInit(): void {}
 
-  viewDetails(details: any) {
+  public viewDetails(details: any) {
     this.countryService.setData(details);
     this._modalService.open(CountryDetailsComponent);
   }
