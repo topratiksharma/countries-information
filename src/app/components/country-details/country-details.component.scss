@@ -18,6 +18,12 @@
   justify-content: center;
 }
 
+.official-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 ::ng-deep {
   .mat-dialog-container {
     background-color: #27293d;
@@ -42,8 +48,29 @@
   }
 }
 
-.official-name {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+@media (max-width: 500px) {
+  .image {
+    margin-top: 5px;
+    height: 140px;
+  }
+
+  ::ng-deep {
+    .mat-dialog-title {
+      margin: -10px 0px 10px 0;
+      display: block;
+    }
+    .mat-list-base .mat-list-item.mat-list-item-with-avatar,
+    .mat-list-base .mat-list-option.mat-list-item-with-avatar {
+      height: 35px !important;
+    }
+    .mat-list-base .mat-list-item {
+      font-size: 12px;
+    }
+    .mat-list-text {
+      padding: 0px !important;
+    }
+    .mat-icon {
+      display: none !important;
+    }
+  }
 }

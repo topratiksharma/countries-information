@@ -1,4 +1,6 @@
+import { Overlay } from '@angular/cdk/overlay';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 
 import { CountryCardComponent } from './country-card.component';
 
@@ -8,9 +10,10 @@ describe('CountryCardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CountryCardComponent ]
-    })
-    .compileComponents();
+      declarations: [CountryCardComponent],
+      imports: [MatDialogModule],
+      providers: [MatDialog],
+    }).compileComponents();
   });
 
   beforeEach(() => {

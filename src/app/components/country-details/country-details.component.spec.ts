@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatDialogRef } from '@angular/material/dialog';
 
 import { CountryDetailsComponent } from './country-details.component';
 
@@ -8,9 +9,9 @@ describe('CountryDetailsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CountryDetailsComponent ]
-    })
-    .compileComponents();
+      declarations: [CountryDetailsComponent],
+      providers: [MatDialogRef],
+    }).compileComponents();
   });
 
   beforeEach(() => {
