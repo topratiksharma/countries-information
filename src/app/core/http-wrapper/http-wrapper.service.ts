@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 
 export class HttpWrapperService {
   constructor(private httpClient: HttpClient) {}
+
   public get(url: string) {
     return this.httpClient.get(this.getUrl(url));
   }

@@ -20,9 +20,7 @@ export class CountryCardComponent {
       capital: details.capital[0],
       flag: details.flags.png,
       currency: Object.values(details.currencies).map((c: any) => c)[0],
-      languages: Object.values(details.languages)
-        .map((l) => l)
-        .join(', '),
+      languages: Object.values(details.languages).map((l) => l).join(', '),
     };
     this.materialDialog.open(CountryDetailsComponent, { data: countryInfo });
   }
